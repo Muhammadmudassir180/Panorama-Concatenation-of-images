@@ -96,11 +96,8 @@ def create_panorama_from_folder(folder_path):
         print("No images found in the folder.")
         return None
 
-    # Define target size based on the first image
     first_image = images[0]
     target_size = (first_image.shape[1], first_image.shape[0])
-
-    # standardized_images = resize_and_standardize_images(images, target_size)
 
     panorama = concatenate_images(images)
     smoothed_panorama = remove_edges(panorama)
@@ -113,6 +110,5 @@ def create_panorama_from_folder(folder_path):
     return smoothed_panorama
 
 
-# Replace 'your_image_folder_path' with the path to your image folder
 folder_path = 'path to your folder images'
 create_panorama_from_folder(folder_path)
